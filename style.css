@@ -1,8 +1,18 @@
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
 .container {
 	width: 100%;
 	background-color: #f8f8f8;
 	padding: 10px 0;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 }
 
 #menu {
@@ -11,12 +21,10 @@
 	margin: 0;
 	display: flex;
 	justify-content: center;
-	/* Center the menu */
 }
 
 #menu li {
 	margin: 0 15px;
-	/* Add spacing between menu items */
 }
 
 #menu a {
@@ -31,4 +39,69 @@
 
 #menu a:hover {
 	background-color: #ccc;
+}
+
+.section {
+	padding: 80px 0;
+}
+
+.section-title {
+	font-size: 24px;
+	font-weight: bold;
+	position: relative;
+	display: inline-block;
+	padding: 0 20px;
+}
+
+.section-title::before,
+.section-title::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 100px;
+	height: 4px;
+	background-color: #3498db;
+}
+
+.section-title::before {
+	left: -110px;
+}
+
+.section-title::after {
+	right: -110px;
+}
+
+.photo-gallery {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.photo {
+	width: 200px;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+}
+
+.photo:hover {
+	transform: scale(1.1);
+}
+
+/* Center the video container */
+.video-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+iframe {
+	width: 100%;
+	/* Ensure the video scales properly */
+	max-width: 560px;
+	/* Set a max width for the video */
+	height: 315px;
 }

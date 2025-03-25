@@ -1,193 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
-<div id="menu">
-<li><a href="#about">About Me</a></li>
-<li><a href="#photos">My Photos</a></li>
-<li><a href="#playlist">My Playlist</a></li>
-<li><a href="#like">Like</a></li>
-<li><a href="#qrcoder">QR code</a></li>
-<li><a href="#spa">Q&A</a></li>
-<li><a href="#contact">Contact Me</a></li>
-</div>
-		  
-<section id="about" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-about me
-<br/>
-<br/>
-<br/>
-</section>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v22.0"></script>
 
-<section id="photos" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my photos
-<br/>
-<br/>
-<br/>
-</section>
+  <div class="container">
+    <ul id="menu">
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#photos">My Photos</a></li>
+      <li><a href="#playlist">My Playlist</a></li>
+      <li><a href="#like">Like</a></li>
+      <li><a href="#qrcoder">QR Code</a></li>
+      <li><a href="#spa">Q&A</a></li>
+      <li><a href="#contact">Contact Me</a></li>
+    </ul>
+  </div>
 
-<section id="playlist" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my playlist
-<br/>
-<br/>
-<br/>
-</section>
+  <section id="about" class="section">
+    <div class="section-title">About Me</div>
+    <p><strong>שם:</strong> דוד לוי</p>
+    <p><strong>גיל:</strong> 71</p>
+    <p><strong>מקום לידה:</strong> ירושלים</p>
+    <p>נולדתי בשנת 1950 בירושלים, בעיר שבה הרחובות מלאים בריחות של מאפים טריים וקולות של ילדים משחקים בחוץ. עוד בילדותי
+      נמשכתי לקריאה ולכתיבה, והייתי מבלה שעות בספרייה העירונית, מדמיין עולמות רחוקים ומרתקים.</p>
+    <p>לאחר שסיימתי את שירותי הצבאי בחיל התותחנים, פניתי ללימודי הוראה מתוך רצון להעביר את אהבתי לידע הלאה. במשך למעלה
+      מ-40 שנה עבדתי כמורה להיסטוריה בתיכון, שם לימדתי דורות של תלמידים על חשיבות העבר והשפעתו על ההווה.</p>
 
-<section id="like" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-give me a like
-<br/>
-<br/>
-<br/>
-</section>
+    <p><strong>🎯 תחביבים:</strong> קריאת ספרים 📚, טיולים בטבע 🚶, גינון 🌱, נגינה בפסנתר 🎹, ולמידת טכנולוגיה חדשה 💡.
+    </p>
 
-<section id="qrcoder" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-scan my code
-<br/>
-<br/>
-<br/>
-</section>
+    <p><strong>🌟 דמות שהשפיעה עליי:</strong>
+      תמיד הערצתי את דוד בן-גוריון, חזונו והאמונה הבלתי מתפשרת שלו בעתידה של המדינה. בזכותו למדתי שעל אף האתגרים, אפשר
+      להגשים חלומות עם נחישות והתמדה.</p>
+  </section>
 
-<section id="spa" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-ans
-<br/>
-<br/>
-<br/>
-</section>
+  <section id="photos" class="section">
+    <div class="section-title">My Photos</div>
+    <div class="photo-gallery">
+      <img src="images/photo1.jpeg" alt="photo1" class="photo">
+      <img src="images/photo2.jpeg" alt="photo2" class="photo">
+      <img src="images/photo3.jpeg" alt="photo3" class="photo">
+    </div>
+  </section>
 
-<section id="contact" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-contact me
-<br/>
-<br/>
-<br/>
-</section>
+  <section id="playlist" class="section">
+    <div class="section-title">My Playlist</div>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/04854XqcfCY" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-<script type="text/javascript">
-$(function(){
-  $("#nav a").click(function(e){
-    e.preventDefault();
-    $('html,body').scrollTo(this.hash,this.hash); 
-  });
-});
-</script>
-<script type="text/javascript">
- $(document).scroll(function() {
-    $('#menu').toggle($(this).scrollTop()>1000)
- });​
- </script>
+    </div>
+  </section>
+
+
+
+  <section id="like" class="section">
+    <div class="section-title">Like</div>
+    <p>Give me a like</p>
+
+    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="500"
+      data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+
+  </section>
+
+
+
+  <section id="qrcoder" class="section">
+    <div class="section-title">QR Code</div>
+    <div class="photo-gallery">
+      <img src="images/QR code.jpeg" alt="photo1" class="photo">
+
+    </div>
+  </section>
+
+  <section id="spa" class="section">
+    <div class="section-title">Q&A</div>
+    <p>Answers</p>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="section-title">Contact Me</div>
+    <p>Contact details</p>
+  </section>
+
+  <script>
+    $(document).ready(function () {
+      $("#menu a").click(function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+      });
+
+      $(document).scroll(function () {
+        $('#menu').toggle($(this).scrollTop() > 100);
+      });
+    });
+  </script>
+
+
+
 </body>
+
 </html>
