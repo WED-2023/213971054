@@ -260,3 +260,89 @@ input[type=submit]:hover {
 	box-shadow: 0 0 8px rgba(46, 204, 113, 0.6);
 	/* Green focus border */
 }
+
+/* General section styling */
+#about {
+	background-color: #f7f7f7;
+	/* Light background for contrast */
+	padding: 40px 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	margin: 20px auto;
+	max-width: 800px;
+	/* Restrict width for better readability */
+	font-family: 'Arial', sans-serif;
+	line-height: 1.6;
+}
+
+#about .section-title {
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	color: #333;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+#about .section-title::before,
+#about .section-title::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 100px;
+	height: 4px;
+	background-color: #3498db;
+	/* Add color accent */
+}
+
+#about .section-title::before {
+	left: -110px;
+}
+
+#about .section-title::after {
+	right: -110px;
+}
+
+#about p {
+	font-size: 1.1rem;
+	color: #555;
+	margin-bottom: 15px;
+	text-align: justify;
+	/* Improved readability */
+}
+
+#about p strong {
+	color: #3498db;
+	/* Accent color for labels */
+}
+
+#about p span {
+	display: block;
+	margin-top: 8px;
+}
+
+#about p em {
+	color: #f39c12;
+}
+
+/* Styling for emojis to make them stand out */
+#about p strong+em {
+	font-size: 1.3rem;
+	margin-right: 8px;
+}
+
+/* Optimized responsiveness */
+@media (max-width: 768px) {
+	#about {
+		padding: 20px;
+		margin: 10px;
+	}
+
+	#about .section-title {
+		font-size: 1.6rem;
+	}
+
+	#about p {
+		font-size: 1rem;
+	}
+}
