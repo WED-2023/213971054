@@ -6,6 +6,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     let message = document.getElementById("message").value.trim();
     let statusMessage = document.getElementById("statusMessage");
 
+    // Validation: Ensure all fields are filled
     if (name === "" || email === "" || message === "") {
         statusMessage.style.color = "red";
         statusMessage.textContent = "All fields are required!";
@@ -19,10 +20,4 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         return;
     }
 
-    // Simulate sending message
-    statusMessage.style.color = "green";
-    statusMessage.textContent = "Message sent successfully!";
-
-    // Clear form
-    document.getElementById("contactForm").reset();
 });

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="section-title">Contact Me</div>
+
+    <br><br><br>
+
+    <div class="container">
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+            <!-- Removed action and method since we are using EmailJS for submission -->
+
+            <label for="email">Email</label>
+            <input type="hidden" name="access_key" value="5696492e-f426-4b5c-878a-e5799a8f9bec">
+            <input type="email" id="email" name="email" placeholder="Your email.." required>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name.." required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write something.." style="height:200px"
+                required></textarea>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>
