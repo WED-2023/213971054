@@ -105,3 +105,120 @@ iframe {
 	/* Set a max width for the video */
 	height: 315px;
 }
+
+/* Styling for the section */
+#spa {
+	background-color: white;
+	margin: 20px;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section title */
+#spa .section-title {
+	font-size: 1.8em;
+	margin-bottom: 15px;
+	color: #333;
+	border-bottom: 2px solid #4CAF50;
+	padding-bottom: 5px;
+}
+
+/* Questions and answers */
+#spa p,
+#spa ul {
+	font-size: 1.1em;
+	margin-bottom: 15px;
+	color: #555;
+}
+
+/* List items */
+#spa ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+#spa ul li {
+	margin-bottom: 10px;
+}
+
+/* Styling for bold text */
+#spa strong {
+	font-weight: bold;
+	color: #333;
+}
+
+/* Additional styling for readability */
+#spa li strong {
+	color: #4CAF50;
+}
+
+#spa p {
+	margin-bottom: 20px;
+	color: #666;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text],
+select,
+textarea {
+	width: 100%;
+	/* Full width */
+	padding: 12px;
+	/* Some padding */
+	border: 1px solid #ccc;
+	/* Gray border */
+	border-radius: 4px;
+	/* Rounded borders */
+	box-sizing: border-box;
+	/* Make sure that padding and width stays in place */
+	margin-top: 6px;
+	/* Add a top margin */
+	margin-bottom: 16px;
+	/* Bottom margin */
+	resize: vertical
+		/* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input[type=email],
+select,
+textarea {
+	width: 100%;
+	/* Full width */
+	padding: 12px;
+	/* Some padding */
+	border: 1px solid #ccc;
+	/* Gray border */
+	border-radius: 4px;
+	/* Rounded borders */
+	box-sizing: border-box;
+	/* Make sure that padding and width stays in place */
+	margin-top: 6px;
+	/* Add a top margin */
+	margin-bottom: 16px;
+	/* Bottom margin */
+	resize: vertical
+		/* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+	background-color: #04AA6D;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}

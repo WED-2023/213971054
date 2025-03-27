@@ -86,13 +86,54 @@
 
   <section id="spa" class="section">
     <div class="section-title">Q&A</div>
-    <p>Answers</p>
+    <p><strong>Q1:answer</strong></p>
+    <ul>
+      <li><strong>Web1:</strong> Static websites, read-only content, decentralized.</li>
+      <li><strong>Web2:</strong> Interactive content, user-generated platforms, centralized control by companies.</li>
+      <li><strong>Web3:</strong> Decentralized applications (dApps), blockchain-based, user-controlled data.</li>
+    </ul>
+    <p><strong>Q2:answer</strong></p>
+
+    <ul>
+      <li><strong>Web1:</strong> You would visit a static website with basic text-based information. Results may come
+        from a medical encyclopedia or government health page. The content is not interactive and cannot be
+        personalized.</li>
+
+      <li><strong>Web2:</strong> You would search on a platform like Google or Wikipedia, and you would see dynamic,
+        user-generated content like forums, articles, and reviews. The search results would be personalized based on
+        your previous browsing habits and profile, but the data is controlled by centralized entities.</li>
+
+      <li><strong>Web3:</strong> You would access a decentralized medical dApp that pulls information from a distributed
+        network of verified contributors. The search results could include peer-reviewed medical documents, user
+        testimonials, and verified medical data, where you, as a user, can control and verify your own data and possibly
+        even contribute information in a secure, decentralized way.</li>
+    </ul>
   </section>
 
   <section id="contact" class="section">
-    <div class="section-title">Contact Me</div>
-    <p>Contact details</p>
+    <script>
+      $(document).ready(function () {
+        // Load contact.html inside #contactSection
+        $("#contact").load("contact.html");
+
+        // Smooth scrolling for menu
+        $("#menu a").click(function (e) {
+          e.preventDefault();
+          $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+          }, 500);
+        });
+
+        // Show/hide menu on scroll
+        $(document).scroll(function () {
+          $('#menu').toggle($(this).scrollTop() > 100);
+        });
+      });
+    </script>
   </section>
+
+
+
 
   <script>
     $(document).ready(function () {
