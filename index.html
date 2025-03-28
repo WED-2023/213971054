@@ -7,7 +7,17 @@
   <title>Profile Page</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let likeCount = 0;
 
+      // Event listener for the Like button
+      $('#likeButton').click(function () {
+        likeCount++;
+        $('#likeCount').text(likeCount);
+      });
+    });
+  </script>
 
 </head>
 
@@ -67,17 +77,6 @@
     <button id="likeButton">Like</button>
     <p>Likes: <span id="likeCount">0</span></p>
   </section>
-  <script>
-    $(document).ready(function () {
-      let likeCount = 0;
-
-      // Event listener for the Like button
-      $('#likeButton').click(function () {
-        likeCount++;
-        $('#likeCount').text(likeCount);
-      });
-    });
-  </script>
 
 
 
