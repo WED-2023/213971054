@@ -23,4 +23,6 @@ To run this project on your local machine, follow these steps:
 
 1. **Clone the repository**:
    Open your terminal and run the following command to clone the repository:
-git clone [https://github.com/yourusername/213971054.git](https://github.com/WED-2023/213971054.git)
+
+
+git clone [https://github.com/WED-2023/213971054.git](https://github.com/WED-2023/213971054.git)
