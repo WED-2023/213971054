@@ -7,12 +7,11 @@
   <title>Profile Page</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 </head>
 
 <body>
-  <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous"
-    src="https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v22.0"></script>
 
   <div class="container">
     <ul id="menu">
@@ -35,15 +34,11 @@
       נמשכתי לקריאה ולכתיבה, והייתי מבלה שעות בספרייה העירונית, מדמיין עולמות רחוקים ומרתקים.</p>
     <p>לאחר שסיימתי את שירותי הצבאי בחיל התותחנים, פניתי ללימודי הוראה מתוך רצון להעביר את אהבתי לידע הלאה. במשך למעלה
       מ-40 שנה עבדתי כמורה להיסטוריה בתיכון, שם לימדתי דורות של תלמידים על חשיבות העבר והשפעתו על ההווה.</p>
-
     <p><strong>🎯 תחביבים:</strong> קריאת ספרים 📚, טיולים בטבע 🚶, גינון 🌱, נגינה בפסנתר 🎹, ולמידת טכנולוגיה חדשה 💡.
     </p>
-
-    <p><strong>🌟 דמות שהשפיעה עליי:</strong>
-      תמיד הערצתי את דוד בן-גוריון, חזונו והאמונה הבלתי מתפשרת שלו בעתידה של המדינה. בזכותו למדתי שעל אף האתגרים, אפשר
-      להגשים חלומות עם נחישות והתמדה.</p>
+    <p><strong>🌟 דמות שהשפיעה עליי:</strong> תמיד הערצתי את דוד בן-גוריון, חזונו והאמונה הבלתי מתפשרת שלו בעתידה של
+      המדינה. בזכותו למדתי שעל אף האתגרים, אפשר להגשים חלומות עם נחישות והתמדה.</p>
   </section>
-
 
   <section id="photos" class="section">
     <div class="section-title">My Photos</div>
@@ -59,29 +54,59 @@
     <div class="video-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/04854XqcfCY" frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
     </div>
   </section>
 
 
 
-  <section id="like" class="section">
+
+
+
+
+  <section id="Like" class="section">
     <div class="section-title">Like</div>
-    <p>Give me a like</p>
-
-    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="500"
-      data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
-
+    <br>
+    <br>
+    <button id="likeButton">Like</button>
+    <p>Likes: <span id="likeCount">0</span></p>
   </section>
 
+  <script>
+    $(document).ready(function () {
+      // Get the initial like count from localStorage, or default to 0
+      let likeCount = localStorage.getItem("likeCount");
+      if (likeCount === null) {
+        likeCount = 0;
+      } else {
+        likeCount = parseInt(likeCount);
+      }
+      $('#likeCount').text(likeCount);
+
+      // Check if the user has already liked
+      let hasLiked = localStorage.getItem("hasLiked");
+
+      if (hasLiked === "true") {
+        $('#likeButton').prop("disabled", true); // Disable the button if the user has already liked
+      }
+
+      // Event listener for the Like button
+      $('#likeButton').click(function () {
+        if (hasLiked !== "true") {
+          likeCount++;
+          $('#likeCount').text(likeCount);
+          localStorage.setItem("likeCount", likeCount);  // Save the like count in localStorage
+          localStorage.setItem("hasLiked", "true");      // Mark the user as having liked
+          $(this).prop("disabled", true); // Disable the button after liking
+        }
+      });
+    });
+  </script>
 
 
   <section id="qrcoder" class="section">
     <div class="section-title">QR Code</div>
     <div class="photo-gallery">
       <img src="images/QR code.jpeg" alt="photo1" class="photo">
-
     </div>
   </section>
 
@@ -132,26 +157,6 @@
       });
     </script>
   </section>
-
-
-
-
-  <script>
-    $(document).ready(function () {
-      $("#menu a").click(function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-          scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
-      });
-
-      $(document).scroll(function () {
-        $('#menu').toggle($(this).scrollTop() > 100);
-      });
-    });
-  </script>
-
-
 
 </body>
 

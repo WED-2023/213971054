@@ -346,3 +346,95 @@ input[type=submit]:hover {
 		font-size: 1rem;
 	}
 }
+
+/* Modernize the Like section */
+#Like {
+	background-color: #ffffff;
+	padding: 40px 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	margin: 20px auto;
+	max-width: 600px;
+	text-align: center;
+}
+
+#Like .section-title {
+	font-size: 2rem;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+#Like .section-title::before,
+#Like .section-title::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 60px;
+	height: 3px;
+	background-color: #3498db;
+}
+
+#Like .section-title::before {
+	left: -80px;
+}
+
+#Like .section-title::after {
+	right: -80px;
+}
+
+/* Like Button Styling */
+#likeButton {
+	background-color: #3498db;
+	color: white;
+	padding: 14px 28px;
+	border: none;
+	border-radius: 50px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	outline: none;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#likeButton:hover {
+	background-color: #2980b9;
+	transform: scale(1.05);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#likeButton:active {
+	background-color: #2471a3;
+	transform: scale(1);
+}
+
+/* Like count styling */
+#likeCount {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #3498db;
+	margin-top: 10px;
+	display: inline-block;
+	transition: color 0.3s ease;
+}
+
+/* Add a subtle animation to the Like count */
+#likeCount {
+	animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0% {
+		color: #3498db;
+	}
+
+	50% {
+		color: #2ecc71;
+	}
+
+	100% {
+		color: #3498db;
+	}
+}
