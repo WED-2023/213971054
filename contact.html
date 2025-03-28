@@ -28,11 +28,45 @@
             <textarea id="message" name="message" placeholder="Write something.." style="height:200px"
                 required></textarea>
 
+            <div class="emoji-section">
+                <div class="emoji-section-title">add emoji-button</div>
+                <div class="emoji-buttons">
+                    <button type="button" class="emoji-button" data-emoji="🌟" aria-label="Add star emoji">🌟</button>
+                    <button type="button" class="emoji-button" data-emoji="😄" aria-label="Add smile emoji">😄</button>
+                    <button type="button" class="emoji-button" data-emoji="🎶" aria-label="Add music emoji">🎶</button>
+                    <button type="button" class="emoji-button" data-emoji="🚀" aria-label="Add rocket emoji">🚀</button>
+                    <button type="button" class="emoji-button" data-emoji="🐶" aria-label="Add dog emoji">🐶</button>
+                    <button type="button" class="emoji-button" data-emoji="🌍" aria-label="Add earth emoji">🌍</button>
+                    <button type="button" class="emoji-button" data-emoji="🍀"
+                        aria-label="Add lucky clover emoji">🍀</button>
+                    <button type="button" class="emoji-button" data-emoji="😂" aria-label="Add laugh emoji">😂</button>
+                </div>
+            </div>
+
             <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
 
+    <script>
+        // JavaScript to insert emoji into the textarea
+        document.querySelectorAll('.emoji-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const emoji = this.getAttribute('data-emoji');
+                const messageTextarea = document.getElementById('message');
 
+                // Insert the emoji at the current cursor position
+                const cursorPos = messageTextarea.selectionStart;
+                const textBefore = messageTextarea.value.substring(0, cursorPos);
+                const textAfter = messageTextarea.value.substring(cursorPos, messageTextarea.value.length);
+
+                // Update the textarea with the emoji inserted at the cursor position
+                messageTextarea.value = textBefore + emoji + textAfter;
+
+                // Move the cursor to the right after the emoji
+                messageTextarea.selectionStart = messageTextarea.selectionEnd = cursorPos + emoji.length;
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -3,19 +3,33 @@ body {
 	text-align: center;
 	margin: 0;
 	padding: 0;
+	/* Light grey background */
+	background-color: rgba(160, 160, 160, 0.8);
+
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
 }
 
 .container {
 	width: 100%;
-	background-color: #f8f8f8;
+	background-color: rgba(160, 160, 160, 0.8);
+	/* Optional: transparent background */
 	padding: 10px 0;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	position: sticky;
 	top: 0;
-	z-index: 1000;
+	z-index: 9999;
+	/* Increase the z-index */
+	background-color: #fff;
+	margin-top: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-/* Navigation Menu */
+/* General styling for menu */
 #menu {
 	list-style-type: none;
 	padding: 0;
@@ -26,9 +40,21 @@ body {
 }
 
 #menu li {
-	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	/* Space between the icon and text */
 }
 
+/* Menu icons styling */
+.menu-icon {
+	font-size: 20px;
+	/* Adjust the size of the icons */
+	color: #3498db;
+	/* Adjust the icon color if needed */
+}
+
+/* Link styling */
 #menu a {
 	text-decoration: none;
 	color: #333;
@@ -41,12 +67,43 @@ body {
 	transition: all 0.3s ease-in-out;
 }
 
+/* Hover effect */
 #menu a:hover {
 	background: linear-gradient(45deg, #2ecc71, #3498db);
 	transform: scale(1.05);
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Styling for the logo */
+#logo {
+	position: absolute;
+	/* Position the logo in the top-left corner */
+	top: 20px;
+	left: 50px;
+}
+
+.logo {
+	width: 50px;
+	/* Adjust the size of your logo */
+	height: auto;
+}
+
+.logo-name {
+	font-size: 24px;
+	/* Adjust the font size of the name */
+	font-weight: bold;
+	color: #333;
+	/* Set the color of the name */
+}
+
+/* Hover effect */
+#menu a:hover {
+	background: linear-gradient(45deg, #2ecc71, #3498db);
+	transform: scale(1.05);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Make sure the sticky menu has enough space to be seen */
 .section {
 	padding: 80px 0;
 }
@@ -58,6 +115,15 @@ body {
 	display: inline-block;
 	padding: 0 20px;
 }
+
+/* Fix for elements behind sticky */
+#spa,
+#about,
+#Like {
+	margin-top: 100px;
+	/* Add space to ensure no overlap */
+}
+
 
 .section-title::before,
 .section-title::after {
@@ -157,6 +223,13 @@ iframe {
 /* Additional styling for readability */
 #spa li strong {
 	color: #4CAF50;
+}
+
+#spa li {
+	background-color: #f1f1f1;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 10px;
 }
 
 #spa p {
@@ -437,4 +510,138 @@ input[type=submit]:hover {
 	100% {
 		color: #3498db;
 	}
+}
+
+/* Style the emoji section */
+.emoji-section {
+	margin-top: 20px;
+	font-family: Arial, sans-serif;
+}
+
+/* Title for emoji section */
+.emoji-section-title {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/* Style for the emoji buttons */
+.emoji-buttons {
+	display: flex;
+	gap: 70px;
+	/* Add space between buttons */
+	flex-wrap: wrap;
+}
+
+/* Individual emoji button style */
+.emoji-button {
+	font-size: 24px;
+	background-color: #f1f1f1;
+	border: none;
+	border-radius: 50%;
+	padding: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for emoji buttons */
+.emoji-button:hover {
+	background-color: #e0e0e0;
+	transform: scale(1.1);
+}
+
+/* Focus effect for emoji buttons */
+.emoji-button:focus {
+	outline: none;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the textarea */
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+	resize: vertical;
+	box-sizing: border-box;
+}
+
+/* Submit button style */
+.submit-btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: background-color 0.3s;
+}
+
+/* Submit button hover effect */
+.submit-btn:hover {
+	background-color: #45a049;
+}
+
+.section {
+	margin: 20px;
+	padding: 15px;
+	border: 1px solid #ddd;
+	/* Add a border to create a box effect */
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	/* Optional for rounded corners */
+}
+
+.section-title {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.photo-gallery {
+	display: flex;
+	gap: 10px;
+}
+
+.photo {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+#about {
+	margin-bottom: 100px;
+	/* Space after the About Me section */
+}
+
+#photos {
+	margin-bottom: 100px;
+	/* Space after the Photos section */
+}
+
+#playlist {
+	margin-bottom: 100px;
+	/* Space after the Playlist section */
+}
+
+#Like {
+	margin-bottom: 100px;
+	/* Space after the Like section */
+}
+
+#qrcoder {
+	margin-bottom: 100px;
+	/* Space after the QR Code section */
+}
+
+#spa {
+	margin-bottom: 100px;
+	/* Space after the Q&A section */
+}
+
+#contact {
+	margin-bottom: 20px;
+	/* Space after the Contact section */
 }

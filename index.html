@@ -9,53 +9,66 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(function () {
-      let likeCount = 0;
+      let likeCount = parseInt(localStorage.getItem('likeCount')) || 0;
+      $('#likeCount').text(likeCount);
 
-      // Event listener for the Like button
       $('#likeButton').click(function () {
         likeCount++;
         $('#likeCount').text(likeCount);
+        localStorage.setItem('likeCount', likeCount);
       });
     });
   </script>
-
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-
   <div class="container">
     <ul id="menu">
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#photos">My Photos</a></li>
-      <li><a href="#playlist">My Playlist</a></li>
-      <li><a href="#like">Like</a></li>
-      <li><a href="#qrcoder">QR Code</a></li>
-      <li><a href="#spa">Q&A</a></li>
-      <li><a href="#contact">Contact Me</a></li>
+      <!-- Logo and Name added here -->
+      <li id="logo">
+        <div class="logo-container">
+          <img src="images/photo1.jpeg" alt="Logo" class="logo">
+        </div>
+      </li>
+      <li><i class="fas fa-user menu-icon"></i><a href="#about">About Me</a></li>
+      <li><i class="fas fa-camera-retro menu-icon"></i><a href="#photos">My Photos</a></li>
+      <li><i class="fas fa-headphones-alt menu-icon"></i><a href="#playlist">My Playlist</a></li>
+      <li><i class="fas fa-thumbs-up menu-icon"></i><a href="#Like">Like</a></li>
+      <li><i class="fas fa-qrcode menu-icon"></i><a href="#qrcoder">QR Code</a></li>
+      <li><i class="fas fa-question-circle menu-icon"></i><a href="#spa">Q&A</a></li>
+      <li><i class="fas fa-envelope menu-icon"></i><a href="#contact">Contact Me</a></li>
     </ul>
   </div>
 
-  <section id="about" class="section" dir="rtl">
+
+  <section id="about" class="section" dir="ltr">
     <div class="section-title">About Me</div>
-    <p><strong>שם:</strong> דוד לוי</p>
-    <p><strong>גיל:</strong> 71</p>
-    <p><strong>מקום לידה:</strong> ירושלים</p>
-    <p>נולדתי בשנת 1950 בירושלים, בעיר שבה הרחובות מלאים בריחות של מאפים טריים וקולות של ילדים משחקים בחוץ. עוד בילדותי
-      נמשכתי לקריאה ולכתיבה, והייתי מבלה שעות בספרייה העירונית, מדמיין עולמות רחוקים ומרתקים.</p>
-    <p>לאחר שסיימתי את שירותי הצבאי בחיל התותחנים, פניתי ללימודי הוראה מתוך רצון להעביר את אהבתי לידע הלאה. במשך למעלה
-      מ-40 שנה עבדתי כמורה להיסטוריה בתיכון, שם לימדתי דורות של תלמידים על חשיבות העבר והשפעתו על ההווה.</p>
-    <p><strong>🎯 תחביבים:</strong> קריאת ספרים 📚, טיולים בטבע 🚶, גינון 🌱, נגינה בפסנתר 🎹, ולמידת טכנולוגיה חדשה 💡.
-    </p>
-    <p><strong>🌟 דמות שהשפיעה עליי:</strong> תמיד הערצתי את דוד בן-גוריון, חזונו והאמונה הבלתי מתפשרת שלו בעתידה של
-      המדינה. בזכותו למדתי שעל אף האתגרים, אפשר להגשים חלומות עם נחישות והתמדה.</p>
+    <p><strong>Name:</strong> David Levy</p>
+    <p><strong>Age:</strong> 71</p>
+    <p><strong>Place of Birth:</strong> Jerusalem</p>
+    <p>I was born in 1950 in Jerusalem, a city where the streets are filled with the smells of fresh pastries and the
+      sounds of children playing outside. Even as a child, I was drawn to reading and writing, spending hours in the
+      city library imagining distant and fascinating worlds.</p>
+    <p>After completing my military service in the Artillery Corps, I pursued a career in education, eager to pass on my
+      love of knowledge. For over 40 years, I worked as a history teacher in high school, where I taught generations of
+      students about the importance of the past and its influence on the present.</p>
+    <p><strong>🎯 Hobbies:</strong> Reading books 📚, hiking in nature 🚶, gardening 🌱, playing the piano 🎹, and
+      learning new technology 💡.</p>
+    <p><strong>🌟 Role Model:</strong> I have always admired David Ben-Gurion for his vision and unwavering belief in
+      the future of the state. Thanks to him, I learned that despite the challenges, dreams can be achieved with
+      determination and perseverance.</p>
   </section>
 
   <section id="photos" class="section">
     <div class="section-title">My Photos</div>
+    <p>
     <div class="photo-gallery">
       <img src="images/photo1.jpeg" alt="photo1" class="photo">
       <img src="images/photo2.jpeg" alt="photo2" class="photo">
       <img src="images/photo3.jpeg" alt="photo3" class="photo">
+      </p>
     </div>
   </section>
 
@@ -127,15 +140,18 @@
             scrollTop: $($.attr(this, 'href')).offset().top
           }, 500);
         });
-
-        // Show/hide menu on scroll
-        $(document).scroll(function () {
-          $('#menu').toggle($(this).scrollTop() > 100);
-        });
       });
     </script>
+    <script>  $(document).ready(function () {
+        $("#menu a").click(function (e) {
+          e.preventDefault();
+          var target = $($.attr(this, 'href'));
+          $('html, body').animate({
+            scrollTop: target.offset().top - 110 // Adjust 50 to the height of your navbar
+          }, 500);
+        });
+      });</script>
   </section>
-
 </body>
 
 </html>

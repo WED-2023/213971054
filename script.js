@@ -19,5 +19,15 @@ document.getElementById("contactForm").addEventListener("submit", function (even
         statusMessage.textContent = "Invalid email format!";
         return;
     }
+    $(document).ready(function () {
+        $("#menu a").click(function (e) {
+            e.preventDefault();
+            var target = $($.attr(this, 'href'));
+            $('html, body').animate({
+                scrollTop: target.offset().top - 50 // Adjust 50 to the height of your navbar
+            }, 500);
+        });
+    });
+
 
 });
