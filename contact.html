@@ -14,9 +14,12 @@
     <br><br><br>
 
     <div class="container">
-        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-            <!-- Removed action and method since we are using EmailJS for submission -->
+        <!-- Add the image section on the left -->
+        <div class="contact-image">
+            <img src="images/photo1.jpeg" alt="Contact Image" />
+        </div>
 
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
             <label for="email">Email</label>
             <input type="hidden" name="access_key" value="5696492e-f426-4b5c-878a-e5799a8f9bec">
             <input type="email" id="email" name="email" placeholder="Your email.." required>
@@ -48,21 +51,17 @@
     </div>
 
     <script>
-        // JavaScript to insert emoji into the textarea
         document.querySelectorAll('.emoji-button').forEach(button => {
             button.addEventListener('click', function () {
                 const emoji = this.getAttribute('data-emoji');
                 const messageTextarea = document.getElementById('message');
 
-                // Insert the emoji at the current cursor position
                 const cursorPos = messageTextarea.selectionStart;
                 const textBefore = messageTextarea.value.substring(0, cursorPos);
                 const textAfter = messageTextarea.value.substring(cursorPos, messageTextarea.value.length);
 
-                // Update the textarea with the emoji inserted at the cursor position
                 messageTextarea.value = textBefore + emoji + textAfter;
 
-                // Move the cursor to the right after the emoji
                 messageTextarea.selectionStart = messageTextarea.selectionEnd = cursorPos + emoji.length;
             });
         });

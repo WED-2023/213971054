@@ -645,3 +645,18 @@ textarea {
 	margin-bottom: 20px;
 	/* Space after the Contact section */
 }
+
+.contact-image img {
+	max-width: 150%;
+	height: 100%;
+	border-radius: 30px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transform: translate(-20%, -50%);
+	/* Moves the image up and left */
+
+}
+
+form {
+	width: 60%;
+	/* Adjust as needed */
+}
