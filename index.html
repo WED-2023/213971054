@@ -7,7 +7,17 @@
   <title>Profile Page</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      let likeCount = 0;
 
+      // Event listener for the Like button
+      $('#likeButton').click(function () {
+        likeCount++;
+        $('#likeCount').text(likeCount);
+      });
+    });
+  </script>
 
 </head>
 
@@ -60,9 +70,6 @@
 
 
 
-
-
-
   <section id="Like" class="section">
     <div class="section-title">Like</div>
     <br>
@@ -71,36 +78,7 @@
     <p>Likes: <span id="likeCount">0</span></p>
   </section>
 
-  <script>
-    $(document).ready(function () {
-      // Get the initial like count from localStorage, or default to 0
-      let likeCount = localStorage.getItem("likeCount");
-      if (likeCount === null) {
-        likeCount = 0;
-      } else {
-        likeCount = parseInt(likeCount);
-      }
-      $('#likeCount').text(likeCount);
 
-      // Check if the user has already liked
-      let hasLiked = localStorage.getItem("hasLiked");
-
-      if (hasLiked === "true") {
-        $('#likeButton').prop("disabled", true); // Disable the button if the user has already liked
-      }
-
-      // Event listener for the Like button
-      $('#likeButton').click(function () {
-        if (hasLiked !== "true") {
-          likeCount++;
-          $('#likeCount').text(likeCount);
-          localStorage.setItem("likeCount", likeCount);  // Save the like count in localStorage
-          localStorage.setItem("hasLiked", "true");      // Mark the user as having liked
-          $(this).prop("disabled", true); // Disable the button after liking
-        }
-      });
-    });
-  </script>
 
 
   <section id="qrcoder" class="section">
